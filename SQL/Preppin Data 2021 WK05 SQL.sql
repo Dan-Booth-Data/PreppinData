@@ -1,3 +1,4 @@
+-- Aggregate table to find the max date of each client and customer.
 WITH Most_Recent_Date_For_Client AS (
     SELECT 
      CLIENT
@@ -5,7 +6,8 @@ WITH Most_Recent_Date_For_Client AS (
      ,MAX(TO_DATE(FROM_DATE, 'dd/mm/yyyy')) AS DATE_COL
     FROM PD_2021_WK05
     GROUP BY CLIENT, CONTACT_NAME)
-    
+
+-- Inner join to filter out any rows that don't contain the Max date.
 SELECT *
 FROM PD_2021_WK05 m
 INNER JOIN MOST_RECENT_DATE_FOR_CLIENT mr
