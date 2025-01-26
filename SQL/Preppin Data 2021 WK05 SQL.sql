@@ -1,4 +1,4 @@
--- Aggregate table to find the max date of each client and customer.
+-- Aggregate original table to find the max date of each client and customer.
 WITH Most_Recent_Date_For_Client AS (
     SELECT 
      CLIENT
